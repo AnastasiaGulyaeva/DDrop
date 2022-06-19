@@ -1,0 +1,24 @@
+.welcome-text {
+    text-align: center;
+    display: table;
+    height: 400px;
+}
+
+.vertical-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.g_id_signin {
+    width: 400px;
+    margin: 40px auto 0 auto;
+}
+
+hr {
+    margin: 60px 0;
+    background-color: var(--purple);
+    height: 2px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, rgba(7, 5, 38, 1), rgb(215, 72, 132), rgba(7, 5, 38, 1)); 
+}
+

@@ -1,0 +1,23 @@
+.alert-container {
+    height: 400px;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+}
+
+.vertical-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+.purple,
+.nav-pills .nav-link.active {
+    background-color: var(--purple);
+    color: white;
+    margin-top: 60px;
+    transition: 0.3s ease-in;
+}

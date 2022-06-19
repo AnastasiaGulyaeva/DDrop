@@ -1,0 +1,61 @@
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+ 
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+// variables 
+:root  {
+    --darkBlue: #070526;
+    --black: black;
+    --white: white;
+    --purple: #8E2A54;
+    --dark-purple: #5f1b38;
+}
+
+
+// styles
+body {
+    background-color: var(--darkBlue) !important;
+    font-family: 'Montserrat' !important;
+    color: var(--white) !important;
+}
+
+h1, h2{
+    margin-bottom: 40px;
+}
+
+.purple-text {
+    color:var(--dark-purple) !important;
+}
+    
+@media (min-width: 2000px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 2000px !important;
+    }
+}
+
+.btn-check:focus, .btn:focus {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0) !important;
+}
+
+.btn:hover{
+    background-color: var(--dark-purple) !important;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: var(--darkBlue) !important;
+}
+
+.alert {
+    font-size: 12px;
+}
+
+button {
+    transition: transform 0.2s !important;
+}
+
+button:active {
+    transform: translateY(3px);
+}

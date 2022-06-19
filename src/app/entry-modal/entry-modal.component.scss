@@ -1,0 +1,115 @@
+.btn-floating {
+    border-radius: 50%;
+    padding: 0;
+    position: relative;
+}
+
+.register-modal {
+    margin: 0;
+}
+
+.g_id_signin {
+    width: 400px;
+    margin: 20px auto;
+}
+
+p, h1 {
+    color: var(--darkBlue);
+}
+
+mdb-form-control {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.nav-justified .nav-item .nav-link {
+    width: 96%;
+}
+
+.my-modal {
+    position: fixed;
+    left: 50%;
+    top:50%;
+    height: 400px; 
+    width: 800px;
+    margin-left: -400px;
+    margin-top: -350px;
+    z-index: 6;
+}
+
+.under-modal {
+ position: fixed;
+ z-index: 5;
+ left:0;
+ top:0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(1, 0, 24, 0.8);
+ backdrop-filter: blur(3px)
+}
+
+.margin-vert {
+    margin: 26px auto;
+}
+
+// ----------------------------  animation ---------------------------
+.link-animation {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+    color: var(--purple);
+    cursor: pointer;
+}
+
+div.link-animation a {
+	display: block;
+	position: relative;
+	padding: 0.2em 0;
+        &:hover {
+            color: var(--dark-purple);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--purple);
+            opacity: 0;
+            transition: opacity 300ms, transform 300ms;
+        }
+}
+
+div.link-animation a::after{
+	opacity: 1;
+	transform: translate3d(0, 0.2em, 0);
+}
+
+div.link-animation a::after {
+	opacity: 1;
+	transform: scale(0);
+	transform-origin: center;
+}
+
+div.link-animation a:hover::after,
+div.link-animation a:focus::after{
+	transform: scale(1);
+}
+
+// ------------------------
+  
+
+.form-control:focus {
+  color:var(--darkBlue) !important;
+}
+
+.form-outline .form-control:focus ~ .form-label {
+    color: var(--darkBlue) !important;
+}
+
+.purple,
+.nav-pills .nav-link.active {
+    background-color: var(--purple);
+    color: white;
+}

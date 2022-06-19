@@ -1,0 +1,35 @@
+.drop-box {
+    height: 400px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--purple);
+}
+    
+.fileupload {
+    height: 400px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 20px;
+    position: relative;
+}
+.vertical-center {
+    position: absolute;              
+    top: 50%;                         
+    transform: translate(0, -50%); 
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.purple,
+.nav-pills .nav-link.active {
+    background-color: var(--purple);
+    color: white;
+    margin-top: 60px;
+    transition: 0.3s ease-in;
+}
+
+h1 {
+    margin: auto 20px !important;
+}
