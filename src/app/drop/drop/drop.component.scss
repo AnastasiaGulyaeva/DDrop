@@ -1,12 +1,33 @@
+.caja-center {
+    height: auto;
+
+}
+
+.purple-line-box {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0) !important;
+    bottom:-24px;
+    border-top: 1px solid var(--purple);
+    border-radius: 0 0 20px 20px;
+    color: white;
+    transition: background-color .3s ease-in;
+    border-top: background-color .3s ease-in;
+        &:hover{
+            border-top: 1px solid var(--dark-purple);
+            background-color: var(--dark-purple) !important;
+        }
+}
+
 .drop-box {
-    height: 400px;
+    height: 300px;
     width: 100%;
     border-radius: 20px;
     box-shadow: 0 0 30px var(--purple);
+    position: relative;
 }
     
 .fileupload {
-    height: 400px;
+    height: 300px;
     width: 100%;
     cursor: pointer;
     border-radius: 20px;
@@ -22,14 +43,27 @@
     text-align: center;
 }
 
-.purple,
-.nav-pills .nav-link.active {
-    background-color: var(--purple);
-    color: white;
-    margin-top: 60px;
-    transition: 0.3s ease-in;
-}
-
 h1 {
     margin: auto 20px !important;
+    position: relative;
+}
+
+
+
+@media (min-width: 1400px) {
+    .drop-box {
+        height: 400px;
+    }
+    .fileupload {
+        height: 400px;
+    }
+}
+ 
+small.file-type {
+    position: absolute;
+    margin: 20px auto;
+    color: rgba(255, 255, 255, 0.5);
+    bottom : 26px;
+    left:50%;
+    transform:translate(-50%);
 }

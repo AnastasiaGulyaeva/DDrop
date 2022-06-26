@@ -1,30 +1,33 @@
-<div class="drop-box fileUploadWrapper">
-  <div *ngIf="alertIsVisible == true">
-    <app-alert #modal (isVisible)="closeModal($event)"></app-alert>
-  </div>
-  <div *ngIf="formIsVisible == true">
-    <form [formGroup]="form" (ngSubmit)="submit(form.value)">
-      <div class="row">
-        <div class="col-md-12">
-          <div
-            class="fileupload"
-            appDrop
-            (click)="fileField.click()"
-            (fileDropped)="upload($event)"
-          >
-            <h1 class="vertical-center"> {{message}} </h1>
-            <input
-              type="file"
-              name="avatars"
-              #fileField
-              (change)="upload($any($event).target.files)"
-              hidden
-              multiple
-            />
+<div class="caja-center">
+  <div class="drop-box fileUploadWrapper">
+    <div *ngIf="alertIsVisible == true">
+      <app-alert #modal (isVisible)="closeModal($event)"></app-alert>
+    </div>
+    <div *ngIf="formIsVisible == true">
+      <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+        <div class="row">
+          <div class="col-md-12">
+            <div
+              class="fileupload"
+              appDrop
+              (click)="fileField.click()"
+              (fileDropped)="upload($event)"
+            >
+              <h1 class="vertical-center"> {{message}} </h1>
+              <input
+                type="file"
+                name="avatars"
+                #fileField
+                (change)="upload($any($event).target.files)"
+                hidden
+                multiple
+              />
+              <small class="file-type">*solo los imagenes</small>
+              <button type="submit" class="btn purple-line-box btn-block mb-4"> <i class="fa-solid fa-arrow-up-from-bracket margin-right-button"></i>SUBIR</button>
+            </div>
           </div>
         </div>
-      </div>
-      <button type="submit" class="btn purple btn-block mb-4">SUBIR</button>
-    </form>
+      </form>
+    </div>
   </div>
 </div>

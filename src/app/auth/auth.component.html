@@ -1,19 +1,22 @@
 <div class="welcome-text">
     <div class="vertical-center">
-        <h2> Bienvenido a DDrop {{name}} </h2>
+        <h2 > Bienvenid@ a DDrop {{ name }} </h2>
         <p> Para subir tus archivos de forma simple a drive, puedes hacer LogIn a través de Google. </p>
         <hr>
-        <div class="g_id_signin"
-            data-type="standard"
-            data-shape="pill"
-            data-theme="outline"
-            data-text="$ {button.text}"
-            data-size="large"
-            data-logo_alignment="left"
-            data-width="400">
+        <div [ngClass]="{ invisible: isLogin }">
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-shape="rectangular"
+                     data-theme="outline"
+                     data-text="$ {button.text}"
+                     data-size="large"
+                     data-width="400">
+                </div>
          </div>
-
-        <p> {{message}} </p>
+        
+        <button [ngClass]="{ invisible: !isLogin }"
+                class="btn purple-line logout" 
+                (click)="logOut()"> <i class="fa-solid fa-arrow-right-from-bracket margin-right-button"></i> LOGOUT</button>
     </div>  
 </div>
    

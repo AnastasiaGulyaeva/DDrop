@@ -6,10 +6,28 @@
     align-items: center;
 }
 
-.box {
-    padding: 40px;
+.backgroung-gradient {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(149deg, rgba(95, 27, 56,1) 0%, rgba(7, 5, 38 ,1) 50%, rgba(95, 27, 56 ,1) 100%);
+    animation: gradient 20s infinite linear;
+    background-size: 500%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 80% 0%;
+    }
+    50% {
+        background-position: 20% 100%;
+    }
+    100% {
+        background-position: 80% 0%;
+    }
 }
 
 
-
+.box {
+    padding: 40px;
+}
 

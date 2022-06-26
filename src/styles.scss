@@ -7,17 +7,16 @@
 
 // variables 
 :root  {
-    --darkBlue: #070526;
-    --black: black;
+    --darkBlue: rgb(7, 5, 38);
+    --black: rgb(0, 0, 0);
     --white: white;
-    --purple: #8E2A54;
-    --dark-purple: #5f1b38;
+    --purple: rgb(142, 42, 84);
+    --dark-purple: rgb(95, 27, 56);
 }
 
 
 // styles
 body {
-    background-color: var(--darkBlue) !important;
     font-family: 'Montserrat' !important;
     color: var(--white) !important;
 }
@@ -29,7 +28,8 @@ h1, h2{
 .purple-text {
     color:var(--dark-purple) !important;
 }
-    
+
+
 @media (min-width: 2000px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 2000px !important;
@@ -40,9 +40,7 @@ h1, h2{
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0) !important;
 }
 
-.btn:hover{
-    background-color: var(--dark-purple) !important;
-}
+
 
 .nav-link:hover, .nav-link:focus {
     color: var(--darkBlue) !important;
@@ -53,9 +51,27 @@ h1, h2{
 }
 
 button {
-    transition: transform 0.2s !important;
+    transition: transform 0.2s;
+    &:active {
+        transform: translateY(3px);
+    }
+    &.purple {
+        margin-top: 60px ;
+    }
 }
 
-button:active {
-    transform: translateY(3px);
+.btn:hover{
+    background-color: var(--dark-purple) !important;
+}
+
+.purple,
+.nav-pills .nav-link.active {
+    background-color: var(--purple);
+    color: white;
+    transition: 0.3s ease-in;
+}
+
+.margin-right-button {
+    margin-right: 10px;
+    margin-left: -10px;
 }

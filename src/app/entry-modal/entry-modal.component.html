@@ -21,9 +21,23 @@
                       <div class="tab-content">
                           <div class="tab-pane fade active show" id="pills-login" role="tabpanel" aria-labelledby="mdb-tab-login">
                          
+                            <p class="text-center">Entra con:</p>
+                            <div (click)="closeModal()">
+                                <div class="g_id_signin"
+                                    data-type="standard"
+                                    data-shape="rectangular"
+                                    data-theme="outline"
+                                    data-text="$ {button.text}"
+                                    data-size="large"
+                                    data-width="400">
+                              </div>
+                            </div>
+                            
+
+
                             <form (ngSubmit)="submitLogin(loginForm.value)" [formGroup]="loginForm">
           
-                              <p class="text-center">Entra con:</p>
+                              <p class="text-center">o:</p>
           
                               <mdb-form-control class="margin-vert">
                                 <input 

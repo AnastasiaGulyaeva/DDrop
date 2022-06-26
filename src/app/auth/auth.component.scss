@@ -22,3 +22,23 @@ hr {
     background-image: linear-gradient(to right, rgba(7, 5, 38, 1), rgb(215, 72, 132), rgba(7, 5, 38, 1)); 
 }
 
+.purple-line {
+    border: 1px solid var(--purple);
+    color: white;
+    transition: 0.3s ease-in;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.purple-line:hover {
+    border: 1px solid var(--dark-purple);
+    background-color: var(--dark-purple) !important;
+}
+
+.border-radius-google {
+    border-radius: 5px !important;
+}
+
+.invisible {
+    display: none;
+}

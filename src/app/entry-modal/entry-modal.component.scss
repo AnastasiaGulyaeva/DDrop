@@ -28,13 +28,13 @@ mdb-form-control {
 
 .my-modal {
     position: fixed;
-    left: 50%;
-    top:50%;
-    height: 400px; 
+    top: 55%;
+    height: 600px; 
     width: 800px;
-    margin-left: -400px;
-    margin-top: -350px;
     z-index: 6;
+    left: 0;
+    right: 0;
+    margin: -300px auto 0 auto;
 }
 
 .under-modal {

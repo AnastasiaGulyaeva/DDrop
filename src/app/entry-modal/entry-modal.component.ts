@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, NgZone, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginServiceService } from '../auth/login-service.service';
 import ConfirmPasswordValidator from '../shared/confirm-password.validator';
@@ -13,13 +13,12 @@ export class EntryModalComponent implements OnInit {
  isModalDialogVisible: boolean = true;
  @Output() isVisible = new EventEmitter<boolean>();
 
-
  registerForm: FormGroup;
  loginForm: FormGroup;
 
- token: string | null;
+ isLogin: boolean;
 
-  constructor( private formBuilder: FormBuilder, private loginService: LoginServiceService) {
+  constructor( private formBuilder: FormBuilder, private loginService: LoginServiceService, private ngZone: NgZone) {
     this.registerForm = formBuilder.group({
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$')]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -32,9 +31,21 @@ export class EntryModalComponent implements OnInit {
     email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$')]],
     password: ['', [Validators.required, Validators.minLength(6)]]
  });
+
+  loginService.isLogin$.subscribe( login => {
+    this.ngZone.run( () => {
+      this.isLogin = login;
+      if(this.isLogin != null) {
+        this.closeModal();
+      }
+    });
+  });
   }
 
   ngOnInit(): void {
+    if ( this.isLogin === true) {
+      this.closeModal();
+    }
   }
 
   activeTab = 'login';

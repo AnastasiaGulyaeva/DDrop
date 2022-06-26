@@ -1,8 +1,9 @@
 <div *ngIf="isModalDialogVisible == true">
     <app-entry-modal #modal (isVisible)="closeModal($event)"></app-entry-modal>
 </div>
-<!-- <app-entry-modal></app-entry-modal> -->
-<div class="container">
-    <app-drop class="box drop-box"></app-drop>
-    <app-auth class="box auth-box"></app-auth>
+<div class="backgroung-gradient">
+    <div class="container">
+        <app-drop class="box drop-box"></app-drop>
+        <app-auth class="box auth-box"></app-auth>
+    </div>
 </div>

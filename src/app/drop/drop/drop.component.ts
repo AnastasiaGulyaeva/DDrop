@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { DropService } from '../drop.service';
 import { LoginServiceService } from '../../auth/login-service.service';
 
+
 @Component({
   selector: 'app-drop',
   templateUrl: './drop.component.html',
@@ -23,6 +24,9 @@ export class DropComponent implements OnInit {
   file:any;
   alertIsVisible: boolean = false;
   formIsVisible: boolean = true;
+
+  preview: string;
+
   constructor(
     public fb: FormBuilder,
     private sanitizer: DomSanitizer,
@@ -35,8 +39,9 @@ export class DropComponent implements OnInit {
   }
   ngOnInit() { }
 
-  upload(event:any) {
+  upload(event:any ) {
     const fileListAsArray = Array.from(event);
+
     fileListAsArray.forEach((item, i) => {
       this.fileArr = [];
       const file:any = (event as HTMLInputElement);
@@ -44,26 +49,34 @@ export class DropComponent implements OnInit {
       this.urlArr.push(url);
       this.fileArr.push({ item, url: url });
     })
+
       this.fileArr.forEach((item) => {
-      this.fileObj.push(item.item);
+        if(item.item.type == "image/jpeg") {
+          this.fileObj.push(item.item);
+          this.name = item.item.name;
+        } else {
+          this.alertIsVisible = true;
+          this.formIsVisible = false;
+          this.form.reset();
+        }
       console.log(item);
-      this.name = item.item.name;
     })
+
     this.form.patchValue({
       avatar: this.fileObj
     })
     this.form.get('avatar')!.updateValueAndValidity();
     console.log(this.form.value.avatar);
-    this.message = `Tu archivo ${this.name} se ha subido correctamente`;
+    if (this.name != null) {
+      this.message = `Tu archivo ${this.name} se ha subido correctamente`;
+    } else {
+      this.message = "ARASTRA TUS ARCHIVOS AQUÍ";
+    }
     this.loginService.uploadFile(this.form.value.avatar);
-
   }
 
   submit(data:any) {
-    if (data.avatar == null) {
-      this.formIsVisible = false;
-      this.alertIsVisible = true;
-    }
+    console.log ("Submit data: " + data);
   }
 
   closeModal(isVisible: boolean) {
