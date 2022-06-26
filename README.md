@@ -1,10 +1,15 @@
 # DDrop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+Es la aplicación con una drop zone para cargar archivos. Tiene unos formularios de login y register. No tiene conexión con la base de datos por eso los datos capturados salen por la consola.
+El proyecto esta creado con [Angular CLI](https://github.com/angular/angular-cli) de version 13.3.0 con SCSS.
+Esta desplegado https://github.com/AnastasiaGulyaeva/DDrop
+
+He utilizado One Tap sign-in para autorizacion con Google, Material Design para Bootstrap, Reactive Forms para formularios.
+Carpetas en el proyecto estan organizados por tematicas - en cada una estan componentes, servicios y modulos relacionados.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
